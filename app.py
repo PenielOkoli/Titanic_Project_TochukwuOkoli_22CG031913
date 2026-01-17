@@ -21,14 +21,17 @@ st.markdown("""
         background-color: #ff4b4b;
         color: white;
         font-weight: bold;
+        border-radius: 10px;
     }
     .stSuccess {
         background-color: #d4edda;
         color: #155724;
+        border-radius: 10px;
     }
     .stError {
         background-color: #f8d7da;
         color: #721c24;
+        border-radius: 10px;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -40,6 +43,7 @@ def load_model():
     model_path = os.path.join('model', 'titanic_survival_model.pkl')
     return joblib.load(model_path)
 
+# Load the model with error handling
 try:
     model = load_model()
 except FileNotFoundError:
@@ -86,17 +90,13 @@ if st.button("Predict Survival Status"):
         st.success(f"**Result: SURVIVED**")
         st.balloons()
         st.write(f"This passenger had a **{probability:.1%}** chance of survival.")
-        
-
-[Image of lifeboat titanic]
-
+        # Added a real image URL for visual appeal
+        st.image("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/RMS_Titanic_3.jpg/640px-RMS_Titanic_3.jpg", caption="The Unsinkable Titanic")
     else:
         st.error(f"**Result: DID NOT SURVIVE**")
         st.write(f"This passenger had a **{probability:.1%}** chance of survival.")
-        
-
-[Image of titanic sinking illustration]
-
+        # Added a real image URL for visual appeal
+        st.image("https://upload.wikimedia.org/wikipedia/commons/6/6e/St%C3%B6wer_Titanic.jpg", caption="Sinking of the Titanic")
 
 # --- Footer ---
 st.markdown("---")
