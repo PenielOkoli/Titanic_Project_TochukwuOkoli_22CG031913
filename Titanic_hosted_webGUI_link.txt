@@ -1,0 +1,6 @@
+Name: Tochukwu Okoli
+Matric Number: 22CG031913
+Machine Learning Algorithm Used: Random Forest Classifier
+Model persistence method used: Joblib
+Live URL of the hosted application: [PASTE YOUR NEW STREAMLIT LINK HERE AFTER DEPLOYING]
+GitHub repository link: https://github.com/PenielOkoli/Titanic_Project_TochukwuOkoli_22CG031913
